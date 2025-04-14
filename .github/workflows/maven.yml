@@ -32,7 +32,7 @@ jobs:
       # Run tests
       - name: Build with Maven
       # package = test then jar
-        run: mvn -B package --file ./back/coursDevOps/pom.xml
+        run: mvn -B package --file ./back/quizz/pom.xml
 
       # Update dependency graph (optional)
       #- name: Update dependency graph
