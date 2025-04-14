@@ -109,7 +109,7 @@ class QuizzControllerTest {
 
         // Exécuter la requête GET
         try {
-			mockMvc.perform(get("/users/all")
+			mockMvc.perform(get("/Quizz")
 			        .contentType(MediaType.APPLICATION_JSON))
 			        .andExpect(status().isOk())
 			        .andExpect(jsonPath("$[0].id").value(mockedList.getFirst().getId()))
@@ -135,7 +135,7 @@ class QuizzControllerTest {
 
         // Exécuter la requête GET
         try {
-			mockMvc.perform(get("/users/1")
+			mockMvc.perform(get("/Quizz/1")
 			        .contentType(MediaType.APPLICATION_JSON))
 			        .andExpect(status().isOk())
 			        .andExpect(jsonPath("$.id").value(TEST_QUIZZ1.getId()))
@@ -167,6 +167,8 @@ class QuizzControllerTest {
 
         // Verify
         verify(quizzService, times(1)).create(any(User.class), anyString(), anyList());
+        
+        //TODO verifier les fails possible
 	}
 
 }
