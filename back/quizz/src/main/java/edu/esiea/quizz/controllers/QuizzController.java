@@ -46,17 +46,17 @@ public class QuizzController {
 		return ResponseEntity.ok(quizzService.getAll());
 	}
 
-	@GetMapping("/{theme}")
-	public ResponseEntity<List<Quizz>> getAll(@PathVariable String theme){
-		List<Quizz> list = quizzService.getAll(theme);
-		if (list.size() == 0) {
-			ResponseEntity.notFound().build();
-		}
-		return ResponseEntity.ok(list);
-	}
+//	@GetMapping("/{theme}")
+//	public ResponseEntity<List<Quizz>> getAll(@PathVariable String theme){
+//		List<Quizz> list = quizzService.getAll(theme);
+//		if (list.size() == 0) {
+//			ResponseEntity.notFound().build();
+//		}
+//		return ResponseEntity.ok(list);
+//	}
 
-	@GetMapping("/id/{id}")
-	public ResponseEntity<Quizz> getAll(@PathVariable int id){
+	@GetMapping("/{id}")
+	public ResponseEntity<Quizz> get(@PathVariable int id){
 		try {
 			return ResponseEntity.ok(quizzService.get(id));
 		} catch (Exception e) {

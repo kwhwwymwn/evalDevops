@@ -24,9 +24,9 @@ public class QuizzService {
 		return repo.findAll();
 	}
 	
-	public List<Quizz> getAll(String theme){
-		return repo.findByTheme(theme);
-	}
+//	public List<Quizz> getAll(String theme){
+//		return repo.findByTheme(theme);
+//	}
 	
 	public Quizz get(int index) {
 		return repo.findById(index).orElseThrow(()-> new RuntimeException("Quizz not found"));
